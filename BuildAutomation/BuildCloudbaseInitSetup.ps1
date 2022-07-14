@@ -4,7 +4,7 @@ Param(
   [string]$SignX509Thumbprint = $null,
   [string]$release = $null,
   # Cloudbase-Init repo details
-  [string]$CloudbaseInitRepoUrl = "https://github.com/cloudbase/cloudbase-init.git",
+  [string]$CloudbaseInitRepoUrl = "https://github.com/curveds/cloudbase-init.git",
   [string]$CloudbaseInitRepoBranch = "master",
   # Use an already available installer or clone a new one.
   [switch]$ClonePullInstallerRepo = $true,
@@ -47,7 +47,7 @@ try
         # Clone a new installer repo no matter what.
         $cloudbaseInitInstallerDir = join-Path $basepath "cloudbase-init-installer"
         ExecRetry {
-            GitClonePull $cloudbaseInitInstallerDir "https://github.com/cloudbase/cloudbase-init-installer.git"
+            GitClonePull $cloudbaseInitInstallerDir "https://github.com/curveds/cloudbase-init-installer"
         }
     }
     else
