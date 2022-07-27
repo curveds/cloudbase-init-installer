@@ -81,7 +81,7 @@ try
     ExecRetry { PipInstall "wheel" -update $true }
     ExecRetry { PipInstall "setuptools" -update $true }
 
-    ExecRetry { PullInstall "requirements" "https://github.com/openstack/requirements" }
+    ExecRetry { PullInstall "requirements" "https://github.com/curveds/requirements.git" }
     $upper_constraints_file = $(Resolve-Path ".\requirements\upper-constraints.txt").Path
     $env:PIP_CONSTRAINT = $upper_constraints_file
     $env:PIP_NO_BINARIES = "cloudbase-init"
